@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jailbreak Device Status CheckR</title>
+    
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="icon" href="/icon-512.png" type="image/png" sizes="512x512">
+    <link rel="icon" href="/icon-192-maskable.png" type="image/png" sizes="192x192" purpose="maskable">
+    <link rel="icon" href="/icon-512-maskable.png" type="image/png" sizes="512x512" purpose="maskable">
+    
+    <!-- SEO Meta -->
+    <meta name="title" content="Jailbreak Device Status CheckR" />
+    <meta name="description" content="Check jailbreak status for Apple devices quickly and easily with Jailbreak checkR—your reliable tool." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://check.jessejesse.xyz" />
+    <meta property="og:title" content="Jailbreak Device Status CheckR" />
+    <meta property="og:description" content="Check jailbreak status for Apple devices quickly and easily with Jailbreak checkR—your reliable tool." />
+    <meta property="og:image" content="https://check.jessejesse.xyz" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://check.jessejesse.xyz" />
+    <meta property="twitter:title" content="Jailbreak Device Status CheckR" />
+    <meta property="twitter:description" content="Check jailbreak status for Apple devices quickly and easily with Jailbreak checkR—your reliable tool." />
+    <meta property="twitter:image" content="https://check.jessejesse.xyz" />
+    <meta name="author" content="Jesse Roper" />
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e0e0e0;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        color: #5a5a5a;
+        margin-bottom: 20px;
+      }
+      .phone-container {
+        width: 300px;
+        height: 500px;
+        border: 16px solid #001111;
+        border-radius: 36px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        background-image: url("./bg.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .screen {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      #device-model {
+        width: 80%;
+        padding: 10px;
+        border: 2px solid #000;
+        border-radius: 10px;
+        outline: none;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+      #check-status {
+        padding: 10px 20px;
+        background-color: #2d3032;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      #check-status:hover {
+        background-color: #00504b;
+      }
+      #result {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        width: 80%;
+        text-align: center;
+        border-radius: 10px;
+      }
+      #palera1n-image,
+      #checkra1n-image,
+      #locked-image {
+        display: none;
+        margin-top: 10px;
+        width: 100px;
+      }
+
+      .home-button {
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+        border: 2px solid #eaeaea;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .home-button:hover {
+        background-color: #f0f0f0;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        border-color: #000;
+      }
+
+      .hidden-link {
+        display: none;
+        margin-top: 20px;
+      }
+
+      .hidden-link a {
+        color: #0066cc;
+        text-decoration: none;
+        font-size: 16px;
+      }
+
+      .hidden-link a:hover {
+        text-decoration: underline;
+      }
+      
+      footer {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #5a5a5a;
+    text-align: center;
+    background-color: transparent;
+}
+
+footer p {
+    margin: 0;
+    padding: 5px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Jailbreak checkR</h1>
+    <div class="phone-container">
+      <div class="screen">
+        <input
+          type="text"
+          id="device-model"
+          placeholder="Enter model: iPhone 7 Plus"
+        />
+        <button id="check-status">Check Device</button>
+        <div id="result"></div>
+        <img id="palera1n-image" src="./palera1n.png" alt="Palera1n Logo" />
+        <img id="checkra1n-image" src="./checkra1n.png" alt="Checkra1n Logo" />
+        <img id="locked-image" src="./locked.png" alt="Locked Device Status" />
+        <div class="home-button">[&nbsp;&nbsp;]</div>
+      </div>
+    </div>
+
+    <div class="hidden-link" id="hidden-link">
+      <a
+        href="https://drive.google.com/file/d/1E4OfUKcmIoIwokG3c33cs6_6Vf70Qj6W/view?usp=share_link"
+        target="_blank"
+        >Every Apple Jailbreak Released</a
+      >
+    </div>
+    <footer>
+    <p>Jailbreak checkR made with&nbsp;&#10085;&nbsp;<a href="https://check.jessejesse.xyz" style="color:#00504b">JesseJesse.xyz</p>
+    </footer>
+     </body>
+    <script>
+      document.getElementById("check-status").onclick = function () {
+        const modelNumber = document
+          .getElementById("device-model")
+          .value.trim();
+        const statusDatabase = {
+          "iPhone 5s": "Jailbreak available with Palera1n",
+          "iPhone 6": "Jailbreak available with Palera1n",
+          "iPhone 6 Plus": "Jailbreak available with Palera1n",
+          "iPhone 6s": "Jailbreak available with Palera1n",
+          "iPhone 6s Plus": "Jailbreak available with Palera1n",
+          "iPhone SE (2016)": "Jailbreak available with Palera1n",
+          "iPhone 7": "Jailbreak available with Palera1n",
+          "iPhone 7 Plus": "Jailbreak available with Palera1n",
+          "iPhone 8": "Jailbreak available with Palera1n",
+          "iPhone 8 Plus": "Jailbreak available with Palera1n",
+          "iPhone X": "Jailbreak with checkra1n",
+          "iPhone 11": "No jailbreak available",
+          "iPhone 12": "No jailbreak available",
+          "iPhone 13": "No jailbreak available",
+          "iPhone 14": "No jailbreak available",
+          "iPad mini 4": "Jailbreak available with Palera1n",
+          "iPad 5": "Jailbreak available with Palera1n",
+          "iPad 6": "Jailbreak available with Palera1n",
+          "iPad 7": "Jailbreak available with Palera1n",
+          'iPad Pro': "Jailbreak available with Palera1n",
+          'iPad Pro': "Jailbreak available with Palera1n",
+          'iPad Pro (12.9") (2nd generation)':
+            "Jailbreak available with Palera1n",
+          "iPad Air 2": "Jailbreak available with Palera1n",
+          "iPod Touch (7th generation)": "Jailbreak available with Palera1n",
+          "Apple TV HD": "Jailbreak available with Palera1n",
+          "Apple TV 4K (1st generation)": "Jailbreak available with Palera1n",
+          "Apple TV 4K (2nd generation)": "No jailbreak available",
+        };
+        const status = statusDatabase[modelNumber] || "Device Not Detected";
+
+        document.getElementById("result").innerText = status;
+
+        const palera1nImage = document.getElementById("palera1n-image");
+        const checkra1nImage = document.getElementById("checkra1n-image");
+        const lockedImage = document.getElementById("locked-image");
+
+        if (status.includes("Palera1n")) {
+          palera1nImage.style.display = "block";
+          checkra1nImage.style.display = "none";
+          lockedImage.style.display = "none";
+        } else if (status.includes("checkra1n")) {
+          palera1nImage.style.display = "none";
+          checkra1nImage.style.display = "block";
+          lockedImage.style.display = "none";
+        } else {
+          palera1nImage.style.display = "none";
+          checkra1nImage.style.display = "none";
+          lockedImage.style.display = "block";
+        }
+      };
+
+      document
+        .querySelector(".home-button")
+        .addEventListener("click", function () {
+          const password = prompt("Enter the SSH password:");
+
+          if (password === "alpine") {
+            alert("iphone:~Root:");
+            document.getElementById("hidden-link").style.display = "block";
+          } else {
+            alert("Incorrect password. Try again.");
+          }
+        });
+    </script>
+</html>
