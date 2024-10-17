@@ -229,28 +229,40 @@ footer p {
           'iPad Pro (12.9") (2nd generation)':
         };
 
-        let resultElement = document.getElementById("result");
+        const status = statusDatabase[modelNumber] || "Device Not Detected";
+
+        document.getElementById("result").innerText = status;
+
         const palera1nImage = document.getElementById("palera1n-image");
         const checkra1nImage = document.getElementById("checkra1n-image");
         const lockedImage = document.getElementById("locked-image");
 
-        palera1nImage.style.display = "none";
-        checkra1nImage.style.display = "none";
-        lockedImage.style.display = "none";
-
-        if (statusDatabase[modelNumber]) {
-          const statusMessage = statusDatabase[modelNumber];
-          resultElement.innerHTML = `<strong>Status:</strong> ${statusMessage}`;
-
-          if (statusMessage.includes("Palera1n")) {
-            palera1nImage.style.display = "block";
-          } else if (statusMessage.includes("Checkra1n")) {
-            checkra1nImage.style.display = "block";
-          }
+        if (status.includes("Palera1n")) {
+          palera1nImage.style.display = "block";
+          checkra1nImage.style.display = "none";
+          lockedImage.style.display = "none";
+        } else if (status.includes("checkra1n")) {
+          palera1nImage.style.display = "none";
+          checkra1nImage.style.display = "block";
+          lockedImage.style.display = "none";
         } else {
-          resultElement.innerHTML = `Status: This device's jailbreak status is locked or unknown.`;
+          palera1nImage.style.display = "none";
+          checkra1nImage.style.display = "none";
           lockedImage.style.display = "block";
         }
       };
+
+      document
+        .querySelector(".home-button")
+        .addEventListener("click", function () {
+          const password = prompt("Enter the SSH password:");
+
+          if (password === "alpine") {
+            alert("iphone:~Root:");
+            document.getElementById("hidden-link").style.display = "block";
+          } else {
+            alert("Incorrect password. Try again.");
+          }
+        });
     </script>
 </html>
