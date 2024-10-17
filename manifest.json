@@ -1,0 +1,21 @@
+{
+  "short_name": "JckR",
+  "name": "Jailbreak checkR",
+  "start_url": "https://check.jessejesse.xyz",
+  "icons": [
+    {
+      "src": "https://pub-c1de1cb456e74d6bbbee111ba9e6c757.r2.dev/palera1n.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://pub-c1de1cb456e74d6bbbee111ba9e6c757.r2.dev/palera1n.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#f0f0f0"
+}
