@@ -175,7 +175,7 @@ footer p {
         <input
           type="text"
           id="device-model"
-          placeholder="Enter model: iPhone 7 Plus"
+          placeholder="enter model: A1688 or iPhone 6s"
         />
         <button id="check-status">Check Device</button>
         <div id="result"></div>
@@ -232,6 +232,40 @@ footer p {
           "Apple TV 4K (1st generation)": "Jailbreak available with Palera1n",
           "Apple TV 4K (2nd generation)": "No jailbreak available",
         };
+
+
+  "A1453": "Jailbreak available with Palera1n", // iPhone 5s
+  "A1533": "Jailbreak available with Palera1n", // iPhone 5s
+  "A1549": "Jailbreak available with Palera1n", // iPhone 6
+  "A1586": "Jailbreak available with Palera1n", // iPhone 6
+  "A1633": "Jailbreak available with Palera1n", // iPhone 6s
+  "A1688": "Jailbreak available with Palera1n", // iPhone 6s
+  "A1863": "Jailbreak available with Palera1n", // iPhone 8
+  "A1905": "Jailbreak available with Palera1n", // iPhone 8
+  "A1864": "Jailbreak available with Palera1n", // iPhone 8 Plus
+  "A1897": "Jailbreak available with Palera1n", // iPhone 8 Plus
+  "A1865": "Jailbreak with checkra1n", // iPhone X (Global)
+  "A1901": "Jailbreak with checkra1n", // iPhone X (GSM)
+  "A1902": "Jailbreak with checkra1n", // iPhone X (Japan)
+  
+  "A1984": "No jailbreak available", // iPhone XR
+  "A2105": "No jailbreak available", // iPhone XR (China, Hong Kong)
+  "A2106": "No jailbreak available", // iPhone XR (Japan)
+  
+  "A2111": "No jailbreak available", // iPhone 11 (GSM)
+  "A2221": "No jailbreak available", // iPhone 11 (Global)
+  "A2223": "No jailbreak available", // iPhone 11 (China, Hong Kong)};
+
+
+
+
+
+
+
+
+
+
+        
         const status = statusDatabase[modelNumber] || "Device Not Detected";
 
         document.getElementById("result").innerText = status;
