@@ -1,18 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Jailbreak Device Status CheckR</title>
     
-    <!-- Icons -->
-    <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
-    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
-    <link rel="icon" href="/icon-512.png" type="image/png" sizes="512x512">
-    <link rel="icon" href="/icon-192-maskable.png" type="image/png" sizes="192x192" purpose="maskable">
-    <link rel="icon" href="/icon-512-maskable.png" type="image/png" sizes="512x512" purpose="maskable">
+    <!-- Icons for Different Devices -->
+    <link rel="icon" href="https://check.jessejesse.xyz/favicon.ico" sizes="any" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://check.jessejesse.xyz/apple-touch-icon.png">
+    <link rel="icon" href="https://check.jessejesse.xyz/favicon.ico" type="image/x-icon" sizes="16x16 32x32">
+    <link rel="icon" href="https://check.jessejesse.xyz/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="icon" href="https://check.jessejesse.xyz/icon-512.png" type="image/png" sizes="512x512">
+    <link rel="icon" href="https://check.jessejesse.xyz/icon-192-maskable.png" type="image/png" sizes="192x192" purpose="maskable">
+    <link rel="icon" href="https://check.jessejesse.xyz/icon-512-maskable.png" type="image/png" sizes="512x512" purpose="maskable">
     
     <!-- SEO Meta -->
     <meta name="title" content="Jailbreak Device Status CheckR" />
@@ -21,12 +22,12 @@
     <meta property="og:url" content="https://check.jessejesse.xyz" />
     <meta property="og:title" content="Jailbreak Device Status CheckR" />
     <meta property="og:description" content="Check jailbreak status for Apple devices quickly and easily with Jailbreak checkR—your reliable tool." />
-    <meta property="og:image" content="https://check.jessejesse.xyz" />
+    <meta property="og:image" content="https://check.jessejesse.xyz/og-image.png" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://check.jessejesse.xyz" />
     <meta property="twitter:title" content="Jailbreak Device Status CheckR" />
     <meta property="twitter:description" content="Check jailbreak status for Apple devices quickly and easily with Jailbreak checkR—your reliable tool." />
-    <meta property="twitter:image" content="https://check.jessejesse.xyz" />
+    <meta property="twitter:image" content="https://check.jessejesse.xyz/twitter-image.png" />
     <meta name="author" content="Jesse Roper" />
   </head>
   <body>
@@ -211,6 +212,9 @@ footer p {
           "iPhone 7 Plus": "Jailbreak available with Palera1n",
           "iPhone 8": "Jailbreak available with Palera1n",
           "iPhone 8 Plus": "Jailbreak available with Palera1n",
+          "iPhone X": "Jailbreak available with Checkra1n",
+          "iPad 6": "Jailbreak available with Palera1n",
+          "iPad 7": "Jailbreak available with Palera1n",
           "iPhone X": "Jailbreak with checkra1n",
           "iPhone 11": "No jailbreak available",
           "iPhone 12": "No jailbreak available",
@@ -223,47 +227,30 @@ footer p {
           'iPad Pro': "Jailbreak available with Palera1n",
           'iPad Pro': "Jailbreak available with Palera1n",
           'iPad Pro (12.9") (2nd generation)':
-            "Jailbreak available with Palera1n",
-          "iPad Air 2": "Jailbreak available with Palera1n",
-          "iPod Touch (7th generation)": "Jailbreak available with Palera1n",
-          "Apple TV HD": "Jailbreak available with Palera1n",
-          "Apple TV 4K (1st generation)": "Jailbreak available with Palera1n",
-          "Apple TV 4K (2nd generation)": "No jailbreak available",
         };
-        const status = statusDatabase[modelNumber] || "Device Not Detected";
 
-        document.getElementById("result").innerText = status;
-
+        let resultElement = document.getElementById("result");
         const palera1nImage = document.getElementById("palera1n-image");
         const checkra1nImage = document.getElementById("checkra1n-image");
         const lockedImage = document.getElementById("locked-image");
 
-        if (status.includes("Palera1n")) {
-          palera1nImage.style.display = "block";
-          checkra1nImage.style.display = "none";
-          lockedImage.style.display = "none";
-        } else if (status.includes("checkra1n")) {
-          palera1nImage.style.display = "none";
-          checkra1nImage.style.display = "block";
-          lockedImage.style.display = "none";
+        palera1nImage.style.display = "none";
+        checkra1nImage.style.display = "none";
+        lockedImage.style.display = "none";
+
+        if (statusDatabase[modelNumber]) {
+          const statusMessage = statusDatabase[modelNumber];
+          resultElement.innerHTML = `<strong>Status:</strong> ${statusMessage}`;
+
+          if (statusMessage.includes("Palera1n")) {
+            palera1nImage.style.display = "block";
+          } else if (statusMessage.includes("Checkra1n")) {
+            checkra1nImage.style.display = "block";
+          }
         } else {
-          palera1nImage.style.display = "none";
-          checkra1nImage.style.display = "none";
+          resultElement.innerHTML = `Status: This device's jailbreak status is locked or unknown.`;
           lockedImage.style.display = "block";
         }
       };
-
-      document
-        .querySelector(".home-button")
-        .addEventListener("click", function () {
-          const password = prompt("Enter the SSH password:");
-
-          if (password === "alpine") {
-            alert("iphone:~Root:");
-            document.getElementById("hidden-link").style.display = "block";
-          } else {
-            alert("Incorrect password. Try again.");
-          }
-        });
     </script>
 </html>
