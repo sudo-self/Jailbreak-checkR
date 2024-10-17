@@ -197,109 +197,90 @@ footer p {
     <p>Jailbreak checkR made with&nbsp;&#10085;&nbsp;<a href="https://check.jessejesse.xyz" style="color:#00504b">JesseJesse.xyz</p>
     </footer>
      </body>
-    <script>
-      document.getElementById("check-status").onclick = function () {
-        const modelNumber = document
-          .getElementById("device-model")
-          .value.trim();
-        const statusDatabase = {
-          "iPhone 5s": "Jailbreak available with Palera1n",
-          "iPhone 6": "Jailbreak available with Palera1n",
-          "iPhone 6 Plus": "Jailbreak available with Palera1n",
-          "iPhone 6s": "Jailbreak available with Palera1n",
-          "iPhone 6s Plus": "Jailbreak available with Palera1n",
-          "iPhone SE (2016)": "Jailbreak available with Palera1n",
-          "iPhone 7": "Jailbreak available with Palera1n",
-          "iPhone 7 Plus": "Jailbreak available with Palera1n",
-          "iPhone 8": "Jailbreak available with Palera1n",
-          "iPhone 8 Plus": "Jailbreak available with Palera1n",
-          "iPhone X": "Jailbreak with checkra1n",
-          "iPhone 11": "No jailbreak available",
-          "iPhone 12": "No jailbreak available",
-          "iPhone 13": "No jailbreak available",
-          "iPhone 14": "No jailbreak available",
-          "iPad mini 4": "Jailbreak available with Palera1n",
-          "iPad 5": "Jailbreak available with Palera1n",
-          "iPad 6": "Jailbreak available with Palera1n",
-          "iPad 7": "Jailbreak available with Palera1n",
-          'iPad Pro': "Jailbreak available with Palera1n",
-          'iPad Pro': "Jailbreak available with Palera1n",
-          'iPad Pro (12.9") (2nd generation)':
-            "Jailbreak available with Palera1n",
-          "iPad Air 2": "Jailbreak available with Palera1n",
-          "iPod Touch (7th generation)": "Jailbreak available with Palera1n",
-          "Apple TV HD": "Jailbreak available with Palera1n",
-          "Apple TV 4K (1st generation)": "Jailbreak available with Palera1n",
-          "Apple TV 4K (2nd generation)": "No jailbreak available",
-        };
+<script>
+  document.getElementById("check-status").onclick = function () {
+    const modelNumber = document.getElementById("device-model").value.trim();
+    
+    const statusDatabase = {
+      "iPhone 5s": "Jailbreak available with Palera1n",
+      "iPhone 6": "Jailbreak available with Palera1n",
+      "iPhone 6 Plus": "Jailbreak available with Palera1n",
+      "iPhone 6s": "Jailbreak available with Palera1n",
+      "iPhone 6s Plus": "Jailbreak available with Palera1n",
+      "iPhone SE (2016)": "Jailbreak available with Palera1n",
+      "iPhone 7": "Jailbreak available with Palera1n",
+      "iPhone 7 Plus": "Jailbreak available with Palera1n",
+      "iPhone 8": "Jailbreak available with Palera1n",
+      "iPhone 8 Plus": "Jailbreak available with Palera1n",
+      "iPhone X": "Jailbreak with checkra1n",
+      "iPhone 11": "No jailbreak available",
+      "iPhone 12": "No jailbreak available",
+      "iPhone 13": "No jailbreak available",
+      "iPhone 14": "No jailbreak available",
+      "iPad mini 4": "Jailbreak available with Palera1n",
+      "iPad 5": "Jailbreak available with Palera1n",
+      "iPad 6": "Jailbreak available with Palera1n",
+      "iPad 7": "Jailbreak available with Palera1n",
+      "iPad Pro": "Jailbreak available with Palera1n",
+      'iPad Pro (12.9") (2nd generation)': "Jailbreak available with Palera1n",
+      "iPad Air 2": "Jailbreak available with Palera1n",
+      "iPod Touch (7th generation)": "Jailbreak available with Palera1n",
+      "Apple TV HD": "Jailbreak available with Palera1n",
+      "Apple TV 4K (1st generation)": "Jailbreak available with Palera1n",
+      "Apple TV 4K (2nd generation)": "No jailbreak available",
+      "A1453": "Jailbreak available with Palera1n",
+      "A1533": "Jailbreak available with Palera1n",
+      "A1549": "Jailbreak available with Palera1n",
+      "A1586": "Jailbreak available with Palera1n",
+      "A1633": "Jailbreak available with Palera1n",
+      "A1688": "Jailbreak available with Palera1n",
+      "A1863": "Jailbreak available with Palera1n",
+      "A1905": "Jailbreak available with Palera1n",
+      "A1864": "Jailbreak available with Palera1n",
+      "A1897": "Jailbreak available with Palera1n",
+      "A1865": "Jailbreak with checkra1n",
+      "A1901": "Jailbreak with checkra1n",
+      "A1902": "Jailbreak with checkra1n",
+      "A1984": "No jailbreak available",
+      "A2105": "No jailbreak available",
+      "A2106": "No jailbreak available",
+      "A2111": "No jailbreak available",
+      "A2221": "No jailbreak available",
+      "A2223": "No jailbreak available"
+    };
 
+    const status = statusDatabase[modelNumber] || "Device Not Detected";
 
-  "A1453": "Jailbreak available with Palera1n", // iPhone 5s
-  "A1533": "Jailbreak available with Palera1n", // iPhone 5s
-  "A1549": "Jailbreak available with Palera1n", // iPhone 6
-  "A1586": "Jailbreak available with Palera1n", // iPhone 6
-  "A1633": "Jailbreak available with Palera1n", // iPhone 6s
-  "A1688": "Jailbreak available with Palera1n", // iPhone 6s
-  "A1863": "Jailbreak available with Palera1n", // iPhone 8
-  "A1905": "Jailbreak available with Palera1n", // iPhone 8
-  "A1864": "Jailbreak available with Palera1n", // iPhone 8 Plus
-  "A1897": "Jailbreak available with Palera1n", // iPhone 8 Plus
-  "A1865": "Jailbreak with checkra1n", // iPhone X (Global)
-  "A1901": "Jailbreak with checkra1n", // iPhone X (GSM)
-  "A1902": "Jailbreak with checkra1n", // iPhone X (Japan)
-  
-  "A1984": "No jailbreak available", // iPhone XR
-  "A2105": "No jailbreak available", // iPhone XR (China, Hong Kong)
-  "A2106": "No jailbreak available", // iPhone XR (Japan)
-  
-  "A2111": "No jailbreak available", // iPhone 11 (GSM)
-  "A2221": "No jailbreak available", // iPhone 11 (Global)
-  "A2223": "No jailbreak available", // iPhone 11 (China, Hong Kong)};
+    document.getElementById("result").innerText = status;
 
+    const palera1nImage = document.getElementById("palera1n-image");
+    const checkra1nImage = document.getElementById("checkra1n-image");
+    const lockedImage = document.getElementById("locked-image");
 
+    if (status.includes("Palera1n")) {
+      palera1nImage.style.display = "block";
+      checkra1nImage.style.display = "none";
+      lockedImage.style.display = "none";
+    } else if (status.includes("checkra1n")) {
+      palera1nImage.style.display = "none";
+      checkra1nImage.style.display = "block";
+      lockedImage.style.display = "none";
+    } else if (status.includes("No jailbreak")) {
+      palera1nImage.style.display = "none";
+      checkra1nImage.style.display = "none";
+      lockedImage.style.display = "block";
+    } else {
+      palera1nImage.style.display = "none";
+      checkra1nImage.style.display = "none";
+      lockedImage.style.display = "none";
+    }
 
+    if (modelNumber.includes("iPhone") || modelNumber.includes("iPad")) {
+      document.getElementById("hidden-link").style.display = "block";
+    } else {
+      document.getElementById("hidden-link").style.display = "none";
+    }
+  };
+</script>
 
-
-
-
-
-
-
-        
-        const status = statusDatabase[modelNumber] || "Device Not Detected";
-
-        document.getElementById("result").innerText = status;
-
-        const palera1nImage = document.getElementById("palera1n-image");
-        const checkra1nImage = document.getElementById("checkra1n-image");
-        const lockedImage = document.getElementById("locked-image");
-
-        if (status.includes("Palera1n")) {
-          palera1nImage.style.display = "block";
-          checkra1nImage.style.display = "none";
-          lockedImage.style.display = "none";
-        } else if (status.includes("checkra1n")) {
-          palera1nImage.style.display = "none";
-          checkra1nImage.style.display = "block";
-          lockedImage.style.display = "none";
-        } else {
-          palera1nImage.style.display = "none";
-          checkra1nImage.style.display = "none";
-          lockedImage.style.display = "block";
-        }
-      };
-
-      document
-        .querySelector(".home-button")
-        .addEventListener("click", function () {
-          const password = prompt("Enter the SSH password:");
-
-          if (password === "alpine") {
-            alert("iphone:~Root:");
-            document.getElementById("hidden-link").style.display = "block";
-          } else {
-            alert("Incorrect password. Try again.");
-          }
-        });
-    </script>
 </html>
